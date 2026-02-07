@@ -3,7 +3,7 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
 
 
 ## Implementation Details
-Language: Java 17+.
+Language: Java 17+.<br>
 Framework: Spring Boot 4.0.
 Data Storage: ArrayList (In-memory).
 ID Generation: AtomicInteger (Thread-safe auto-increment starting from 101).
