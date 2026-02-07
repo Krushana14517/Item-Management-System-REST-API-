@@ -10,65 +10,65 @@ ID Generation: AtomicInteger (Thread-safe auto-increment starting from 101).<br>
 Validation: Hibernate Validator (Jakarta Validation).<br>
 
 
-## 🛠️ API Endpoints
-Method	Endpoint	      Description
-POST  	/addItem	      Add a new item (ID generated automatically).
-GET	    /getItem	      Retrieve all items in the store.
-GET	    /getItem/{id}	  Retrieve a specific item by its unique ID.
-PUT    	/{id}           Update details of an existing item.
-DELETE	/delete/{id}	  Remove an item from the store
+## 🛠️ API Endpoints<br>
+Method	Endpoint	      Description<br>
+POST  	/addItem	      Add a new item (ID generated automatically).<br>
+GET	    /getItem	      Retrieve all items in the store.<br>
+GET	    /getItem/{id}	  Retrieve a specific item by its unique ID.<br>
+PUT    	/{id}           Update details of an existing item.<br>
+DELETE	/delete/{id}	  Remove an item from the store<br>
 
 
-## 📋 Implementation Details
+## 📋 Implementation Details<br>
 
-### 1. Data Integrity & Validation
-We use Jakarta Validation annotations to ensure data quality:
-@NotBlank: Ensures names and categories are not empty.
-@Size(min = 10): Ensures descriptions provide enough detail.
-@Positive: Ensures prices are always greater than zero.
+### 1. Data Integrity & Validation<br>
+We use Jakarta Validation annotations to ensure data quality:<br>
+@NotBlank: Ensures names and categories are not empty.<br>
+@Size(min = 10): Ensures descriptions provide enough detail.<br>
+@Positive: Ensures prices are always greater than zero.<br>
 
-### 2. Logic Choices
-Search Strategy: Instead of using .get(index), we iterate through the list to match the specific Integer id. This prevents IndexOutOfBoundsException.
-Safe Deletion: Used java.util.Iterator in the delete method to prevent ConcurrentModificationException while removing items from the list.
-Wrapper Classes: Used Integer and Double to support null handling during JSON parsing.
-
-
-## 💻 How to Run the Project
-
-### Prerequisites
-Java 17 or higher
-Maven 3.6+
-
-### Steps
-1.Clone the Repository:
-Bash
-git clone https://github.com/Krushana14517/item-crud-api.git
-
-2.Build the Application:
-Bash
-mvn clean install
-
-3.Run the Application:
-Bash
-mvn spring-boot:run
-
-4.Test the API: The server will start at http://localhost:8080. You can use Postman to test the endpoints.
+### 2. Logic Choices<br>
+Search Strategy: Instead of using .get(index), we iterate through the list to match the specific Integer id. This prevents IndexOutOfBoundsException.<br>
+Safe Deletion: Used java.util.Iterator in the delete method to prevent ConcurrentModificationException while removing items from the list.<br>
+Wrapper Classes: Used Integer and Double to support null handling during JSON parsing.<br>
 
 
-## 🧪 Sample Request (POST /addItem)
-Body (JSON):
+## 💻 How to Run the Project<br>
 
-JSON
-{
-  "name": "Gaming Keyboard",
-  "description": "Mechanical RGB keyboard with blue switches.",
-  "price": 59.99,
-  "category": "Peripherals"
-}
+### Prerequisites<br>
+Java 17 or higher<br>
+Maven 3.6+<br>
+
+### Steps<br>
+1.Clone the Repository:<br>
+Bash<br>
+git clone https://github.com/Krushana14517/item-crud-api.git<br>
+
+2.Build the Application:<br>
+Bash<br>
+mvn clean install<br>
+
+3.Run the Application:<br>
+Bash<br>
+mvn spring-boot:run<br>
+
+4.Test the API: The server will start at http://localhost:8080. You can use Postman to test the endpoints.<br>
 
 
-## 👤 Author
-Krushna Prakash Mahajan Java Backend Developer
+## 🧪 Sample Request (POST /addItem)<br>
+Body (JSON):<br>
+
+JSON<br>
+{<br>
+  "name": "Gaming Keyboard",<br>
+  "description": "Mechanical RGB keyboard with blue switches.",<br>
+  "price": 59.99,<br>
+  "category": "Peripherals"<br>
+}<br>
+
+
+## 👤 Author<br>
+Krushna Prakash Mahajan Java Backend Developer<br>
 
 
 
