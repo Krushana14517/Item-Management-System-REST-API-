@@ -1,13 +1,13 @@
-# Item-Management-System-REST-API-
+# Item-Management-System-REST-API<br>
 A robust Spring Boot RESTful API designed to manage an e-commerce product catalog. This project demonstrates full CRUD (Create, Read, Update, Delete) operations using an in-memory data store.
 
 
-## Implementation Details
+## Implementation Details<br>
 Language: Java 17+.<br>
-Framework: Spring Boot 4.0.
-Data Storage: ArrayList (In-memory).
-ID Generation: AtomicInteger (Thread-safe auto-increment starting from 101).
-Validation: Hibernate Validator (Jakarta Validation).
+Framework: Spring Boot 4.0.<br>
+Data Storage: ArrayList (In-memory).<br>
+ID Generation: AtomicInteger (Thread-safe auto-increment starting from 101).<br>
+Validation: Hibernate Validator (Jakarta Validation).<br>
 
 
 ## 🛠️ API Endpoints
