@@ -12,7 +12,7 @@ Validation: Hibernate Validator (Jakarta Validation).<br>
 
 ## 🛠️ API Endpoints<br>
 Method	Endpoint	      Description<br>
-POST  ->	(/addItem)	    Add a new item (ID generated automatically).<br>
+POST  ->	( /addItem )	  --  Add a new item (ID generated automatically).<br>
 GET	  ->  (/getItem)	      Retrieve all items in the store.<br>
 GET	  ->  (/getItem/{id})	  Retrieve a specific item by its unique ID.<br>
 PUT    ->	(/{id})           Update details of an existing item.<br>
