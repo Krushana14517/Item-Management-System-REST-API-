@@ -36,9 +36,9 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
    - Data is stored in an `ArrayList`. 
    - **Note:** Since it's an in-memory store, the data will reset whenever the server restarts or redeploys on Railway.
 
-## 🧪 Sample Request (POST /addItem)
-
-**URL:** `https://your-app-name.up.railway.app/addItem`  
+## 🧪 Sample Request (getITem/addItem)
+**URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/getItem`
+**URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/addItem`  
 **Method:** `POST`  
 **Headers:** `Content-Type: application/json`
 
@@ -50,6 +50,6 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
   "price": 59.99,
   "category": "Peripherals"
 }
-
+```
 ## 👤 Author
 **Krushna Prakash Mahajan** *Java Backend Developer*
