@@ -22,7 +22,7 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
 | **POST** | `/addItem` | Add a new item (ID generated automatically) |
 | **GET** | `/getItem` | Retrieve all items in the store |
 | **GET** | `/getItem/{id}` | Retrieve a specific item by ID |
-| **PUT** | `/update/{id}` | Update details of an existing item |
+| **PUT** | `/{id}` | Update details of an existing item |
 | **DELETE** | `/delete/{id}` | Remove an item from the store |
 
 ---
