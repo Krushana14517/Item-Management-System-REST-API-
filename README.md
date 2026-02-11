@@ -2,13 +2,18 @@
 
 A robust Spring Boot RESTful API designed to manage an e-commerce product catalog. This project demonstrates full CRUD (Create, Read, Update, Delete) operations using an in-memory data store.
 
+---
+
 ## 🛠️ Implementation Details
-- **Language:** Java 17+
-- **Framework:** Spring Boot 3.x
-- **Data Storage:** ArrayList (In-memory)
-- **ID Generation:** `AtomicInteger` (Thread-safe auto-increment starting from 101)
-- **Validation:** Jakarta Validation (Hibernate Validator)
-- **Hosting:** Railway
+
+* **Language:** Java 17+
+* **Framework:** Spring Boot 3.x
+* **Data Storage:** ArrayList (In-memory)
+* **ID Generation:** `AtomicInteger` (Thread-safe auto-increment starting from 101)
+* **Validation:** Jakarta Validation (Hibernate Validator)
+* **Hosting:** Railway
+
+---
 
 ## 📋 API Endpoints
 
@@ -16,32 +21,53 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
 | :--- | :--- | :--- |
 | **POST** | `/addItem` | Add a new item (ID generated automatically) |
 | **GET** | `/getItem` | Retrieve all items in the store |
-| **GET** | `/getItem/{id}` | Retrieve a specific item by its unique ID |
-| **PUT** | `/{id}` | Update details of an existing item |
+| **GET** | `/getItem/{id}` | Retrieve a specific item by ID |
+| **PUT** | `/update/{id}` | Update details of an existing item |
 | **DELETE** | `/delete/{id}` | Remove an item from the store |
 
+---
 
+## 🚀 How to Run the Project
+
+### 1. Prerequisites
+Ensure you have the following installed:
+* **JDK 17** or higher
+* **Maven 3.6+**
+* An IDE (IntelliJ IDEA, Eclipse, or VS Code)
+
+### 2. Setup & Execution
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/Krushana14517/Item-Management-System-REST-API-.git](https://github.com/Krushana14517/Item-Management-System-REST-API-.git)
+    cd Item-Management-System-REST-API-
+    ```
+2.  **Build the Project:**
+    ```bash
+    mvn clean install
+    ```
+3.  **Run the Application:**
+    ```bash
+    mvn spring-boot:run
+    ```
+    *The API will be accessible at: `http://localhost:8080`*
+
+---
 
 ## 💡 Key Technical Highlights
 
-1. **Data Integrity & Validation:** We use Jakarta Validation annotations to ensure data quality:
-   - `@NotBlank`: Ensures names and categories are not empty.
-   - `@Positive`: Ensures prices are always greater than zero.
+* **Data Integrity & Validation:** Uses `@NotBlank` and `@Positive` annotations to ensure high-quality data input.
+* **Search Strategy:** Iterates through the list to match IDs, avoiding `IndexOutOfBoundsException`.
+* **Safe Deletion:** Implemented `java.util.Iterator` to prevent `ConcurrentModificationException` during item removal.
+* **In-Memory Store:** Uses a thread-safe approach with `ArrayList`, though data resets upon server restart.
 
-2. **Search & Safety Logic:**
-   - **Search Strategy:** Instead of using `.get(index)`, the system iterates through the list to match the specific `Integer id`. This prevents `IndexOutOfBoundsException`.
-   - **Safe Deletion:** Used `java.util.Iterator` in the delete method to prevent `ConcurrentModificationException` while removing items from the list.
 
-3. **In-Memory Store:**
-   - Data is stored in an `ArrayList`. 
-   - **Note:** Since it's an in-memory store, the data will reset whenever the server restarts or redeploys on Railway.
 
-## 🧪 Sample Request (getITem/addItem)
-**URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/getItem/101`
+---
+
+## 🧪 Sample API Usage
+
+**Endpoint:** `POST /addItem`  
 **URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/addItem`  
-**Method:** `POST`  
-**Headers:** `Content-Type: application/json`
-
 **Body (JSON):**
 ```json
 {
@@ -50,6 +76,3 @@ A robust Spring Boot RESTful API designed to manage an e-commerce product catalo
   "price": 59.99,
   "category": "Peripherals"
 }
-```
-## 👤 Author
-**Krushna Prakash Mahajan** *Java Backend Developer*
