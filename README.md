@@ -77,3 +77,10 @@ Ensure you have the following installed:
   "price": 59.99,
   "category": "Peripherals"
 }
+```
+
+---
+
+## 👤 Author
+
+**Krushna Prakash Mahajan** *Java Backend Developer*
