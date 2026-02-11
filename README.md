@@ -67,6 +67,7 @@ Ensure you have the following installed:
 ## 🧪 Sample API Usage
 
 **Endpoint:** `POST /addItem`  
+**URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/getItem`  
 **URL:** `https://item-management-system-rest-api-production-48b5.up.railway.app/addItem`  
 **Body (JSON):**
 ```json
